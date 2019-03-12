@@ -9,6 +9,17 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <header>
+        <lu>
+          <li><%= link_to "ホーム", tweets_path %></li>
+          <li><%= link_to "Tweetを投稿する", new_tweet_path %></li>
+        </lu>
+      </header>
+        <%= yield %>
+      <footer>
+         <p>Copyright © 2019 AGURU All RIGHTS RESERVED.</p>
+      </footer>
+    </div>
   </body>
 </html>

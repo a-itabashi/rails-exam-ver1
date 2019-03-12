@@ -6,7 +6,7 @@ class TweetsController < ApplicationController
   end
 
   def new
-    if params[:name]
+    if params[:back]
       @tweet = Tweet.new(tweet_params)
     else
       @tweet = Tweet.new
