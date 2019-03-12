@@ -1,12 +1,16 @@
 class TweetsController < ApplicationController
-  before_action :set_tweet, only:[:edit, :update,:destroy]
+  before_action :set_tweet, only:[:show,:edit, :update,:destroy]
   
   def index
     @tweets = Tweet.all
   end
 
   def new
-    @tweet = Tweet.new
+    if params[:name]
+      @tweet = Tweet.new(tweet_params)
+    else
+      @tweet = Tweet.new
+    end
   end
 
   def create
@@ -22,6 +26,9 @@ class TweetsController < ApplicationController
     @tweet = Tweet.new(tweet_params)
     render 'new' if @tweet.invalid?
   end
+  
+  def show
+  end
 
   def edit
   end
@@ -35,6 +42,8 @@ class TweetsController < ApplicationController
   end
 
   def destroy
+    @tweet.destroy
+    redirect_to tweets_path, notice: "Tweetを削除しました"
   end
   
   private

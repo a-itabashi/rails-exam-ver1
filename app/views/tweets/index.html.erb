@@ -4,6 +4,7 @@
     <% @tweets.each do |f| %>
       <tr>
         <td><%= f.content %></td>
+        <td><%= link_to "全文確認", tweet_path(f.id) %></td>
         <td><%= link_to "編集", edit_tweet_path(f.id) %></td>
         <td><%= link_to "削除", tweet_path(f.id), method: :delete, data: {confirm: "削除して宜しいですか？"} %></td>
       </tr>

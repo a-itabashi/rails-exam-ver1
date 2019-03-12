@@ -3,13 +3,12 @@
 <%= form_with(model: @tweet, local: true, url: tweets_path) do |f| %>
   <%= f.hidden_field :content %>
   
-  <p>投稿内容</p>
-  <p><%= f.content %></p>
+  <h2>投稿内容</h2>
+  <p><%= @tweet.content %></p>
   <p><%= f.submit "投稿する" %></p>
+<% end %>
   
-  <%= form_with(model: @tweet, local: true, url: new_tweet_path, method: :get) do |f| %>
-     <%= f.hidden_field :content %>
-     <p><%= f.submit "戻る", name: "back" %></p>
-  <% end %>
-
+<%= form_with(model: @tweet, local: true, url: new_tweet_path, method: :get) do |f| %>
+   <%= f.hidden_field :content %>
+   <p><%= f.submit "戻る", name: "back" %></p>
 <% end %>
