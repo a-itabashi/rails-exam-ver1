@@ -1,19 +1,19 @@
 html{
   height: 100%;
+  width:100%;
 }
 
 body {
-  text-align: center;
   height:100%;
-  position:relative;
+  width:100%;
+  text-align: center;
 }
 
 .container{
+  width:980px;
   min-height:100%;
-}
-
-table{
   margin:0 auto;
+  position: relative;
 }
 
 header{
@@ -21,14 +21,14 @@ header{
   background-color: black;
 }
 
-li{
+.header li{
   list-style:none;
   float:left;
   margin:10px 30px;
   width:auto;
 }
 
-li a{
+.header li a{
   text-decoration: none;
   display:block;
   color:white;
@@ -38,14 +38,33 @@ li a{
 footer{
   display: table;
   background-color: black;
-  height:50px;
-  width:100%;
+  height:70px;
+  width:980px;
   position: absolute;
   bottom: 0;
+  margin-top:20px;
 }
 
 footer p{
   display:table-cell;
   vertical-align: middle;
   color:white;
+}
+
+.table{
+  width:980px;
+  table-layout: fixed;
+}
+
+.table td{
+  overflow: hidden;
+}
+
+.table td.list2{
+  width:100px;
+}
+
+.show{
+  word-break : break-all;
+  text-align: left;
 }
